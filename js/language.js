@@ -11,7 +11,7 @@ function toggleLanguage() {
             // Switch to English (LTR)
             html.setAttribute('dir', 'ltr');
             html.setAttribute('lang', 'en');
-            langBtn.innerText = 'العربية';
+            langBtn.innerText = 'AR';
             
             // Swap text content
             document.querySelectorAll('[data-en]').forEach(el => {
@@ -25,7 +25,7 @@ function toggleLanguage() {
             // Switch back to Arabic (RTL)
             html.setAttribute('dir', 'rtl');
             html.setAttribute('lang', 'ar');
-            langBtn.innerText = 'English';
+            langBtn.innerText = 'EN';
             
             // Restore Arabic text
             document.querySelectorAll('[data-en]').forEach(el => {
