@@ -600,6 +600,10 @@ html[dir="ltr"] .course-details-list li { padding-right: 0; padding-left: 15px; 
 .course-details-list li::before { content: '\2022'; color: var(--accent); position: absolute; right: 0; top: 0; }
 html[dir="ltr"] .course-details-list li::before { right: auto; left: 0; }
 
+/* --- MUSICAL EXPLANATIONS --- */
+.explanations-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px; }
+.explanation-card { flex: 1 1 350px; max-width: 500px; display: flex; flex-direction: column; padding: 30px; position: relative; overflow: hidden; text-align: center; }
+
 /* --- ACHIEVEMENTS --- */
 .roles-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 .role-card { flex: 1 1 280px; max-width: 400px; text-align: center; padding: 40px 30px; position: relative; overflow: hidden; }
@@ -615,7 +619,7 @@ html[dir="ltr"] .course-details-list li::before { right: auto; left: 0; }
 .tab-btn.active { background: rgba(212, 175, 55, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); color: var(--bg-dark); border-color: rgba(212, 175, 55, 0.8); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); transform: translateY(0); }
 
 .portfolio-grid { flex-wrap: wrap; justify-content: center; gap: 30px; display: none; }
-.portfolio-grid.active { display: flex; animation: fadeIn 0.6s ease; }
+.portfolio-grid.active { display: flex; animation: fadeIn 0.3s ease-out forwards; }
 .project-card { flex: 1 1 320px; max-width: 420px; display: flex; flex-direction: column; overflow: hidden; position: relative; cursor: none; }
 .project-img-wrapper img { transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); }
 .project-card:hover .project-img-wrapper img { transform: scale(1.1); }
@@ -650,6 +654,7 @@ footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); text-ali
 .footer-note { font-size: 0.9rem; color: #666; text-align: center; }
 
 /* --- UI/UX MODAL OVERLAYS --- */
+.modal-overlay,
 .portfolio-overlay {
     display: none;
     position: fixed;
@@ -666,6 +671,7 @@ footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); text-ali
     overflow-y: auto; /* Scrollable if content is long */
     padding: 50px 20px;
 }
+.modal-overlay.active,
 .portfolio-overlay.active {
     display: block;
     opacity: 1;
@@ -683,6 +689,7 @@ footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); text-ali
     opacity: 0;
     transition: all 0.4s ease 0.1s;
 }
+.modal-overlay.active .modal-content,
 .portfolio-overlay.active .modal-content {
     transform: translateY(0);
     opacity: 1;
