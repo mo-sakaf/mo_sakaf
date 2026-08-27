@@ -478,6 +478,17 @@
         margin-left: auto !important;
         margin-right: auto !important;
     }
+    #content-frontend, #content-uiux {
+        grid-template-columns: 1fr !important;
+    }
+    #content-frontend .project-card, #content-uiux .project-card {
+        max-width: 280px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+    #content-frontend .project-card:last-child:nth-child(odd), #content-uiux .project-card:last-child:nth-child(odd) {
+        width: 100% !important;
+    }
     .portfolio-grid .project-title {
         font-size: 0.95rem !important;
         padding: 8px 5px !important;
